@@ -15,7 +15,7 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/afrainkabir/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/Rafid2005', label: 'GitHub' },
   { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
   { icon: Instagram, href: 'https://www.instagram.com/kak_a_r_ot/', label: 'Instagram' },
