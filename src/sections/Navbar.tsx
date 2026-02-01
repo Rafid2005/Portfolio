@@ -61,13 +61,13 @@ export default function Navbar() {
           <a
             href="#home"
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+               e.preventDefault();
+               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="group relative"
           >
             <span className="font-display text-xl font-bold gradient-text">
-              Afrain
+              Afrain's Portfolio
             </span>
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-gold-400 group-hover:w-full transition-all duration-300" />
           </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="nav-link-item px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
+               className="nav-link-item px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
               >
                 {link.name}
               </a>
@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <button
               onClick={() => scrollToSection('#contact')}
-              className="btn-primary text-sm py-2.5 px-6"
+             className="btn-primary text-sm py-2.5 px-6"
             >
               Let's Talk
             </button>
@@ -128,7 +128,7 @@ export default function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="block py-3 px-4 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium"
+               className="block py-3 px-4 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300 font-medium"
               >
                 {link.name}
               </a>
