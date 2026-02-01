@@ -107,7 +107,7 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight perspective-1000 whitespace-nowrap">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight perspective-1000 sm:whitespace-nowrap">
               {name.split('').map((char, index) => (
                 <span
                   key={index}
