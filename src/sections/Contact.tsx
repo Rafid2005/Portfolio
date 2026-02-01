@@ -17,7 +17,7 @@ const contactInfo = [
     icon: Phone,
     label: 'Phone / WhatsApp',
     value: '+880 1327-068809',
-    href: 'https://wa.me/8801327068809',
+    href: 'https://wa.me/8801327068809 ',
     color: 'from-green-500 to-emerald-500',
   },
   {
@@ -31,8 +31,6 @@ const contactInfo = [
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -90,21 +88,6 @@ export default function Contact() {
 
     return () => ctx.revert();
   }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
-  };
 
   return (
     <section
@@ -188,7 +171,7 @@ export default function Contact() {
 
             {/* Quick Chat */}
             <a
-              href="https://wa.me/8801327068809"
+              href="https://wa.me/8801327068809 "
               target="_blank"
               rel="noopener noreferrer"
               className="contact-info-card flex items-center gap-4 p-5 glass-card rounded-2xl hover:bg-emerald-500/10 hover:border-emerald-500/40 transition-all duration-300 group"
@@ -207,81 +190,63 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="contact-form lg:col-span-3">
             <form
-              onSubmit={handleSubmit}
+              action="https://formspree.io/f/mojlvpab"
+              method="POST"
               className="glass-strong p-8 rounded-3xl"
             >
-              {isSubmitted ? (
-                <div className="text-center py-16">
-                  <div className="w-20 h-20 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="w-10 h-10 text-emerald-400" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-2">Message Sent!</h3>
-                  <p className="text-white/60">Thank you for reaching out. I'll get back to you within 24 hours.</p>
+              <div className="grid sm:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label className="block text-sm font-medium text-white/70 mb-2">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    className="glass-input w-full"
+                  />
                 </div>
-              ) : (
-                <>
-                  <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <label className="block text-sm font-medium text-white/70 mb-2">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="John Doe"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                        className="glass-input w-full"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-white/70 mb-2">
-                        Your Email
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="john@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                        className="glass-input w-full"
-                      />
-                    </div>
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-white/70 mb-2">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                    className="glass-input w-full"
+                  />
+                </div>
+              </div>
 
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-white/70 mb-2">
-                      Your Message
-                    </label>
-                    <textarea
-                      placeholder="Tell me about your project..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      required
-                      rows={5}
-                      className="glass-input w-full resize-none"
-                    />
-                  </div>
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-white/70 mb-2">
+                  Your Message
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  required
+                  rows={5}
+                  className="glass-input w-full resize-none"
+                />
+              </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5" />
-                        Send Message
-                      </>
-                    )}
-                  </button>
-                </>
-              )}
+              <button
+                type="submit"
+                className="w-full btn-primary flex items-center justify-center gap-2"
+              >
+                <Send className="w-5 h-5" />
+                Send Message
+              </button>
             </form>
           </div>
         </div>
