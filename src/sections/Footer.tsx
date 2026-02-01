@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Linkedin, Github, Twitter, Instagram, Heart, ArrowUp, Sparkles } from 'lucide-react';
+import { Linkedin, Github, Facebook, Instagram, Heart, ArrowUp, Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,9 +16,9 @@ const quickLinks = [
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+  { icon: Github, href: 'https://github.com/Rafid2005', label: 'GitHub' },
+  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/kak_a_r_ot/', label: 'Instagram' },
 ];
 
 export default function Footer() {
@@ -68,7 +68,7 @@ export default function Footer() {
           <div>
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToTop(); }} className="inline-block group">
               <h3 className="font-display text-2xl font-bold gradient-text mb-2">
-                Afrain Kabir Rafid
+                Afrain's Portfolio
               </h3>
             </a>
             <p className="text-white/60 mb-4">
