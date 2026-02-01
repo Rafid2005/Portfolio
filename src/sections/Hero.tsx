@@ -172,7 +172,7 @@ export default function Hero() {
               <div className="relative">
                 <div className="image-frame relative w-80 h-96 sm:w-96 sm:h-[28rem] rounded-3xl overflow-hidden">
                   <img
-                    src="src="portrait.jpg""
+                    src="portrait.jpg""
                     alt="Afrain Kabir Rafid"
                     className="w-full h-full object-cover"
                   />
