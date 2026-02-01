@@ -133,7 +133,7 @@ export default function About() {
               {/* Image */}
               <div className="relative rounded-2xl overflow-hidden">
                 <img
-                  src="/portrait.jpg"
+                  src="portrait.jpg"
                   alt="Afrain Kabir Rafid"
                   className="w-full aspect-[4/5] object-cover"
                 />
